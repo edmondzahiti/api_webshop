@@ -84,9 +84,6 @@ class OrderService implements OrderServiceInterface
         return response()->json(['type' => 'success', 'message' => 'Products added successfully']);
     }
 
-    /**
-     * @throws \Exception
-     */
     public function payOrder($id): JsonResponse
     {
         $order = $this->orderRepository->findOrFail($id);
