@@ -25,7 +25,8 @@ class ImportCustomers extends Command
         try {
             $this->info("Importing Customers...");
 
-            $file = storage_path('app/excel/customers.csv');
+            $file = base_path('imports/customers.csv');
+
             Excel::import(new CustomersImport($this->customerRepository, $this), $file);
 
             $this->info('Customers import completed');

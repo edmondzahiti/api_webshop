@@ -25,7 +25,8 @@ class ImportProducts extends Command
         try {
             $this->info("Importing Products...");
 
-            $file = storage_path('app/excel/products.csv');
+            $file = base_path('imports/products.csv');
+
             Excel::import(new ProductsImport($this->productRepository, $this), $file);
 
             $this->info('Products import completed');
